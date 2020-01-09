@@ -1,4 +1,4 @@
-package com.example.demo;
+package it.davidenastri.healthcheck;
 
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
@@ -8,6 +8,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public final class Utils {
+
+    /** Tag for the log messages */
+    private static final String LOG_TAG = Utils.class.getSimpleName();
 
     private Utils() {
     }

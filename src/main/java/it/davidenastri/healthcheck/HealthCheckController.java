@@ -1,4 +1,4 @@
-package com.example.demo;
+package it.davidenastri.healthcheck;
 
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
