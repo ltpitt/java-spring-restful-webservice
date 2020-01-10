@@ -1,16 +1,17 @@
 package it.davidenastri.healthcheck;
 
+import java.util.List;
+
 public class ConfigurationItem {
     private String hostname;
     private String type;
+    private List<Check> checks;
 
-    public ConfigurationItem(String hostname, String type, String environment) {
+    public ConfigurationItem(String hostname, String type, List<Check> checks) {
         this.hostname = hostname;
         this.type = type;
-        this.environment = environment;
+        this.checks = checks;
     }
-
-    private String environment;
 
     public String getHostname() {
         return hostname;
@@ -28,12 +29,12 @@ public class ConfigurationItem {
         this.type = type;
     }
 
-    public String getEnvironment() {
-        return environment;
+    public List<Check> getChecks() {
+        return checks;
     }
 
-    public void setEnvironment(String environment) {
-        this.environment = environment;
+    public void setChecks(List<Check> checks) {
+        this.checks = checks;
     }
 
     @Override
@@ -41,7 +42,8 @@ public class ConfigurationItem {
         return "ConfigurationItem{" +
                 "hostname='" + hostname + '\'' +
                 ", type='" + type + '\'' +
-                ", environment='" + environment + '\'' +
+                ", checks=" + checks +
                 '}';
     }
+
 }
