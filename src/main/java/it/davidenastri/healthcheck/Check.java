@@ -1,23 +1,21 @@
 package it.davidenastri.healthcheck;
 
-import java.lang.reflect.Type;
+import org.apache.tomcat.jni.Proc;
 
 public class Check {
 
     private int port;
-    private String protocol;
-    private CheckType checkType;
+    private Protocol protocol;
 
-    enum CheckType {
+    enum Protocol {
         HTTP,
         HTTPS,
         TCP
     }
 
-    public Check(int port, String protocol, CheckType checkType) {
+    public Check(int port, Protocol protocol) {
         this.port = port;
         this.protocol = protocol;
-        this.checkType = checkType;
     }
 
     public int getPort() {
@@ -28,20 +26,12 @@ public class Check {
         this.port = port;
     }
 
-    public String getProtocol() {
+    public Protocol getProtocol() {
         return protocol;
     }
 
-    public void setProtocol(String protocol) {
+    public void setProtocol(Protocol protocol) {
         this.protocol = protocol;
-    }
-
-    public CheckType getCheckType() {
-        return checkType;
-    }
-
-    public void setCheckType(CheckType checkType) {
-        this.checkType = checkType;
     }
 
     @Override
@@ -49,7 +39,6 @@ public class Check {
         return "Check{" +
                 "port=" + port +
                 ", protocol='" + protocol + '\'' +
-                ", checkType=" + checkType +
                 '}';
     }
 
