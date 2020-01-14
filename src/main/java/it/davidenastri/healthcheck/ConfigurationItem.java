@@ -1,11 +1,20 @@
 package it.davidenastri.healthcheck;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class ConfigurationItem {
+    @Id
+    @GeneratedValue
+    private Long id;
     private String hostname;
     private String type;
     private List<Check> checks;
+
+    protected ConfigurationItem() {}
 
     public ConfigurationItem(String hostname, String type, List<Check> checks) {
         this.hostname = hostname;
@@ -17,30 +26,19 @@ public class ConfigurationItem {
         return hostname;
     }
 
-    public void setHostname(String hostname) {
-        this.hostname = hostname;
-    }
-
     public String getType() {
         return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public List<Check> getChecks() {
         return checks;
     }
 
-    public void setChecks(List<Check> checks) {
-        this.checks = checks;
-    }
-
     @Override
     public String toString() {
         return "ConfigurationItem{" +
-                "hostname='" + hostname + '\'' +
+                "id=" + id +
+                ", hostname='" + hostname + '\'' +
                 ", type='" + type + '\'' +
                 ", checks=" + checks +
                 '}';
