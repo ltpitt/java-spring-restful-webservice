@@ -5,11 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.List;
 
-@Entity
+//@Entity
 public class ConfigurationItem {
-    @Id
-    @GeneratedValue
-    private Long id;
+//    @Id
+//    @GeneratedValue
+//    private Long id;
     private String hostname;
     private String type;
     private List<Check> checks;
@@ -37,7 +37,7 @@ public class ConfigurationItem {
     @Override
     public String toString() {
         return "ConfigurationItem{" +
-                "id=" + id +
+//                "id=" + id +
                 ", hostname='" + hostname + '\'' +
                 ", type='" + type + '\'' +
                 ", checks=" + checks +
