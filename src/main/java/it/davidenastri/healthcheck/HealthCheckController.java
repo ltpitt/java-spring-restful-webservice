@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class HealthCheckController {
@@ -26,6 +25,8 @@ public class HealthCheckController {
         List<ConfigurationItem> ciList = new ArrayList<ConfigurationItem>();
         ciList.add(ci);
         ciList.add(ci);
+        final ConfigurationItemService configurationItemService = new ConfigurationItemService();
+        configurationItemService.performCheck(new Check(80, Check.Protocol.HTTP));
         return ciList;
     }
 
