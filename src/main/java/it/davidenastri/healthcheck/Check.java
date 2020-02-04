@@ -1,8 +1,16 @@
 package it.davidenastri.healthcheck;
 
-import org.apache.tomcat.jni.Proc;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Check {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private int port;
     private Protocol protocol;
