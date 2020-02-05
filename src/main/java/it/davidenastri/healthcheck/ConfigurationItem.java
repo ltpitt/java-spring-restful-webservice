@@ -1,26 +1,26 @@
 package it.davidenastri.healthcheck;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class ConfigurationItem {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String hostname;
     private String type;
-    //private List<Check> checks;
 
-    protected ConfigurationItem() {}
+    @OneToMany(targetEntity = Check.class, mappedBy = "check_id", fetch = FetchType.EAGER)
+    private List<Check> checks;
+
+    protected ConfigurationItem() {
+    }
 
     public ConfigurationItem(String hostname, String type, List<Check> checks) {
         this.hostname = hostname;
         this.type = type;
-//        this.checks = checks;
+        this.checks = checks;
     }
 
 
@@ -54,7 +54,7 @@ public class ConfigurationItem {
                 "id=" + id +
                 ", hostname='" + hostname + '\'' +
                 ", type='" + type + '\'' +
-//                ", checks=" + checks +
+                ", checks=" + checks +
                 '}';
     }
 
