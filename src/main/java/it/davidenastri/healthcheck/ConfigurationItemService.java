@@ -13,6 +13,7 @@ public class ConfigurationItemService {
     @Autowired
     ConfigurationItemRepository repository;
 
+
     public void performCheck(Check check) {
         if (check.getProtocol().equals(Check.Protocol.HTTP)) {
             logger.info("A DEBUG Message");
@@ -22,8 +23,7 @@ public class ConfigurationItemService {
         }
     }
 
-//    @Autowired
-//    ConfigurationItemRepository repository;
+
 //    public void add(DogDto dto) {
 //        repository.save(toEntity(dto));
 //    }
