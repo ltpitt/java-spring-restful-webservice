@@ -23,7 +23,15 @@ public class HealthCheckApplication {
 			List<Check> checks = new ArrayList<Check>();
 			checks.add(check);
 			ConfigurationItem ci = new ConfigurationItem("davidenastri.it", "webserver", checks);
+			ConfigurationItem ci2 = new ConfigurationItem("davidenastri2.it", "webserver", checks);
 			repository.save(ci);
+			repository.save(ci2);
+
+
+			List<ConfigurationItem> cis = repository.findAll();
+
+			cis.stream()
+					.forEach(x -> System.out.println(x));
 
 //			// fetch all customers
 //			log.info("Customers found with findAll():");
