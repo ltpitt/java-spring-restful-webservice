@@ -16,7 +16,7 @@ Davide Nastri – [@pitto](https://twitter.com/pitto) – d.nastri@gmail.com
 
 See ``LICENSE`` for more information.
 
-[Java Text Editor](https://github.com/ltpitt/JAVA-SPRING-RESTFUL-WEBSERVICE) 
+[Java Spring Restful Webservice](https://github.com/ltpitt/java-spring-restful-webservice) 
 
 ## Contributing
 
