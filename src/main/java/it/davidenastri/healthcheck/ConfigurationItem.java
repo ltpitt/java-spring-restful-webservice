@@ -4,14 +4,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table
 public class ConfigurationItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column
     private String hostname;
+
+    @Column
     private String type;
 
-    @OneToMany(targetEntity = Check.class, mappedBy = "check_id", fetch = FetchType.EAGER)
+    @Column
+    @OneToMany(cascade = {CascadeType.ALL})
+    @ElementCollection(targetClass = Check.class)
     private List<Check> checks;
 
     protected ConfigurationItem() {
@@ -23,13 +30,12 @@ public class ConfigurationItem {
         this.checks = checks;
     }
 
+    public List<Check> getChecks() {
+        return checks;
+    }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getHostname() {

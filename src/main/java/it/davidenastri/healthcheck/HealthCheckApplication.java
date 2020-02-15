@@ -5,9 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @SpringBootApplication
 public class HealthCheckApplication {
 
@@ -19,19 +16,17 @@ public class HealthCheckApplication {
 	public CommandLineRunner demo(ConfigurationItemRepository repository) {
 		return (args) -> {
 			// save a few customers
-			Check check = new Check(80, Check.Protocol.HTTP);
-			List<Check> checks = new ArrayList<Check>();
-			checks.add(check);
-			ConfigurationItem ci = new ConfigurationItem("davidenastri.it", "webserver", checks);
-			ConfigurationItem ci2 = new ConfigurationItem("davidenastri2.it", "webserver", checks);
-			repository.save(ci);
-			repository.save(ci2);
-
-
-			List<ConfigurationItem> cis = repository.findAll();
-
-			cis.stream()
-					.forEach(x -> System.out.println(x));
+//			Check check = new Check(80, Check.Protocol.HTTP);
+//			List<Check> checks = new ArrayList<Check>();
+//			checks.add(check);
+//			ConfigurationItem ci = new ConfigurationItem("davidenastri.it", "webserver", checks);
+//			ConfigurationItem ci2 = new ConfigurationItem("davidenastri2.it", "webserver", checks);
+//			repository.save(ci);
+//			repository.save(ci2);
+//			List<ConfigurationItem> cis = repository.findAll();
+//
+//			cis.stream()
+//					.forEach(x -> System.out.println(x));
 
 //			// fetch all customers
 //			log.info("Customers found with findAll():");
