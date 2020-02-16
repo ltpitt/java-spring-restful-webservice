@@ -22,6 +22,9 @@ public class Check {
         TCP
     }
 
+    protected Check() {
+    }
+
     public Check(int port, Protocol protocol) {
         this.port = port;
         this.protocol = protocol;
