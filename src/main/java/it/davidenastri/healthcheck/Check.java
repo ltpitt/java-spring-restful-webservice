@@ -3,7 +3,7 @@ package it.davidenastri.healthcheck;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "_check")
+@Table(name = "tblCheck")
 public class Check {
 
     @Id
