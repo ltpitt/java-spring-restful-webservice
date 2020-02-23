@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "tblConfigurationItem")
 public class ConfigurationItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
