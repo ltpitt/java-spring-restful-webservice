@@ -1,7 +1,5 @@
 package it.davidenastri.healthcheck;
 
-import kong.unirest.HttpResponse;
-import kong.unirest.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,18 +29,26 @@ public class HealthCheckController {
 
     @GetMapping(value = "/api/{name}")
     public String getSpecificEnvironment(@PathVariable String name) {
-        HttpResponse<JsonNode> response = Utils.httpGet("http://www.mocky.io/v2/5a9ce37b3100004f00ab5154");
-        System.out.println(name);
-        return response.getBody().toString();
+        return "Work in progress";
     }
 
     @GetMapping(value = "/api/init")
     public String initializeData() {
-        Check check = new Check(80, Check.Protocol.HTTP);
-        List<Check> checks = new ArrayList<Check>();
-        checks.add(check);
-        ConfigurationItem ci = new ConfigurationItem("davidenastri.it", "webserver", checks);
+        Check check80Http = new Check(80, Check.Protocol.HTTP);
+        Check check443Https = new Check(443, Check.Protocol.HTTPS);
+        List<Check> checks1 = new ArrayList<Check>();
+        checks1.add(check80Http);
+        List<Check> checks2 = new ArrayList<Check>();
+        checks2.add(check443Https);
+        List<Check> checks3 = new ArrayList<Check>();
+        checks3.add(check80Http);
+        checks3.add(check443Https);
+        ConfigurationItem ci = new ConfigurationItem("davidenastri.it", "webserver", checks1);
+        ConfigurationItem ci2 = new ConfigurationItem("davidenastri.it2", "webserver", checks2);
+        ConfigurationItem ci3 = new ConfigurationItem("davidenastri.it3", "webserver", checks3);
         configurationItemRepository.save(ci);
+        configurationItemRepository.save(ci2);
+        configurationItemRepository.save(ci3);
         return "Done";
     }
 
