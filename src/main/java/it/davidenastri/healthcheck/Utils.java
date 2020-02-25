@@ -15,6 +15,11 @@ public final class Utils {
     private Utils() {
     }
 
+    public static String httpGet2(String url) {
+        HttpResponse<JsonNode> response = Utils.httpGet("http://www.mocky.io/v2/5a9ce37b3100004f00ab5154");
+        return response.getBody().toString();
+    }
+
     public static HttpResponse<JsonNode> httpGet(String url){
         HttpResponse<JsonNode> result = null;
         CompletableFuture<HttpResponse<JsonNode>> future = Unirest.get(url)
