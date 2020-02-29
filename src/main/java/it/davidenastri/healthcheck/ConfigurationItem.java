@@ -8,7 +8,8 @@ import java.util.List;
 public class ConfigurationItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "CONFIGURATIONITEM_ID")
+    private int id;
 
     @Column
     private String hostname;
@@ -24,7 +25,8 @@ public class ConfigurationItem {
     protected ConfigurationItem() {
     }
 
-    public ConfigurationItem(String hostname, String type, List<Check> checks) {
+    public ConfigurationItem(int id, String hostname, String type, List<Check> checks) {
+        this.id = id;
         this.hostname = hostname;
         this.type = type;
         this.checks = checks;
@@ -34,8 +36,12 @@ public class ConfigurationItem {
         return checks;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
+    }
+
+    public void setId() {
+        this.id = id;
     }
 
     public String getHostname() {
