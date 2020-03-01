@@ -1,5 +1,8 @@
-package it.davidenastri.healthcheck;
+package it.davidenastri.healthcheck.controller;
 
+import it.davidenastri.healthcheck.model.ConfigurationItem;
+import it.davidenastri.healthcheck.repository.ConfigurationItemRepository;
+import it.davidenastri.healthcheck.service.ConfigurationItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,4 +1,4 @@
-package it.davidenastri.healthcheck;
+package it.davidenastri.healthcheck.model;
 
 import javax.persistence.*;
 import java.util.List;

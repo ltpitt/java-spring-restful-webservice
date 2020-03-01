@@ -1,5 +1,6 @@
 package it.davidenastri.healthcheck;
 
+import it.davidenastri.healthcheck.repository.ConfigurationItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

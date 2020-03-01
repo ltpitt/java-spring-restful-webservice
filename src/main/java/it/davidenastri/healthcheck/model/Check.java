@@ -1,4 +1,4 @@
-package it.davidenastri.healthcheck;
+package it.davidenastri.healthcheck.model;
 
 import javax.persistence.*;
 
@@ -15,12 +15,6 @@ public class Check {
 
     @Column
     private Protocol protocol;
-
-    enum Protocol {
-        HTTP,
-        HTTPS,
-        TCP
-    }
 
     protected Check() {
     }

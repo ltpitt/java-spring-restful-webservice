@@ -1,5 +1,10 @@
-package it.davidenastri.healthcheck;
+package it.davidenastri.healthcheck.service;
 
+
+import it.davidenastri.healthcheck.model.Check;
+import it.davidenastri.healthcheck.model.ConfigurationItem;
+import it.davidenastri.healthcheck.model.Protocol;
+import it.davidenastri.healthcheck.repository.ConfigurationItemRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 
 @Service
 public class ConfigurationItemService {
@@ -20,8 +26,8 @@ public class ConfigurationItemService {
 
     public ConfigurationItemService() {
         System.out.println("Service Layer is created");
-        Check check80Http = new Check(80, Check.Protocol.HTTP);
-        Check check443Https = new Check(443, Check.Protocol.HTTPS);
+        Check check80Http = new Check(80, Protocol.HTTP);
+        Check check443Https = new Check(443, Protocol.HTTPS);
         List<Check> checks1 = new ArrayList<Check>();
         checks1.add(check80Http);
         List<Check> checks2 = new ArrayList<Check>();
