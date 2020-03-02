@@ -4,9 +4,7 @@ import it.davidenastri.healthcheck.model.ConfigurationItem;
 import it.davidenastri.healthcheck.repository.ConfigurationItemRepository;
 import it.davidenastri.healthcheck.service.ConfigurationItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,9 +27,9 @@ public class HealthCheckController {
         return configurationItemService.getConfigurationItem(id);
     }
 
-    @GetMapping(value = "/api/{name}")
-    public String getSpecificEnvironment(@PathVariable String name) {
-        return "Work in progress";
+    @PostMapping(value = "/configurationitems/save")
+    public void saveConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
+        configurationItemService.saveConfigurationItem(configurationItem);
     }
 
 }
