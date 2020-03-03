@@ -27,9 +27,19 @@ public class HealthCheckController {
         return configurationItemService.getConfigurationItem(id);
     }
 
-    @PostMapping(value = "/configurationitems/save")
-    public void saveConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
-        configurationItemService.saveConfigurationItem(configurationItem);
+    @PostMapping(value = "/configurationitems/create")
+    public void createConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
+        configurationItemService.createConfigurationItem(configurationItem);
+    }
+
+    @PostMapping(value = "/configurationitems/update")
+    public void updateConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
+        configurationItemService.updateConfigurationItem(configurationItem);
+    }
+
+    @PostMapping(value = "/configurationitems/delete")
+    public void deleteConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
+        configurationItemService.deleteConfigurationItem(configurationItem.getId());
     }
 
 }

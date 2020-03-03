@@ -53,7 +53,7 @@ public class ConfigurationItemService {
                 .findFirst().orElse(null);
     }
 
-    public void saveConfigurationItem(ConfigurationItem configurationItem) {
+    public void createConfigurationItem(ConfigurationItem configurationItem) {
         this.configurationItems.add(configurationItem);
     }
 
