@@ -32,12 +32,12 @@ public class HealthCheckController {
         configurationItemService.createConfigurationItem(configurationItem);
     }
 
-    @PostMapping(value = "/configurationitems/update")
+    @PutMapping(value = "/configurationitems/update")
     public void updateConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
         configurationItemService.updateConfigurationItem(configurationItem);
     }
 
-    @PostMapping(value = "/configurationitems/delete")
+    @DeleteMapping(value = "/configurationitems/delete")
     public void deleteConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
         configurationItemService.deleteConfigurationItem(configurationItem.getId());
     }
