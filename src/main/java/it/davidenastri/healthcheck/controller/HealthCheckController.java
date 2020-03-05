@@ -27,19 +27,19 @@ public class HealthCheckController {
         return configurationItemService.getConfigurationItem(id);
     }
 
-    @PostMapping(value = "/configurationitems/create")
+    @PostMapping(value = "/configurationitems")
     public void createConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
         configurationItemService.createConfigurationItem(configurationItem);
     }
 
-    @PutMapping(value = "/configurationitems/update")
+    @PutMapping(value = "/configurationitems")
     public void updateConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
         configurationItemService.updateConfigurationItem(configurationItem);
     }
 
-    @DeleteMapping(value = "/configurationitems/delete")
-    public void deleteConfigurationItem(@RequestBody ConfigurationItem configurationItem) {
-        configurationItemService.deleteConfigurationItem(configurationItem.getId());
+    @DeleteMapping(value = "/configurationitems/{id}")
+    public void deleteConfigurationItem(@PathVariable int id) {
+        configurationItemService.deleteConfigurationItem(id);
     }
 
 }
