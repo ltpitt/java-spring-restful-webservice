@@ -69,7 +69,7 @@ public class ConfigurationItemService {
     public void deleteConfigurationItem(int id) {
         Optional<ConfigurationItem> configurationItemWithSameID = Optional.ofNullable(getConfigurationItem(id));
         if (configurationItemWithSameID.isPresent()) {
-            configurationItems.remove(id);
+            configurationItems.remove(configurationItemWithSameID.get());
         }
 
     }
