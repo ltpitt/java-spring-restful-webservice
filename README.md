@@ -8,7 +8,7 @@ A RESTful Web Service with Spring Boot Actuator
 ## How to use
 
 - Clone this repo locally
-- TODO
+- Open the project with IntelliJ IDEA
 
 ## Meta
 
